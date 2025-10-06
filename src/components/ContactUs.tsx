@@ -53,17 +53,17 @@ export function ContactUs() {
             titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
             Get in <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Touch</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
             Have questions or feedback? We'd love to hear from you. Our team is here to help.
           </p>
         </div>
 
         <div 
           ref={contentRef}
-          className={`grid md:grid-cols-2 gap-12 transition-all duration-800 ${
+          className={`grid md:grid-cols-2 gap-8 md:gap-12 transition-all duration-800 ${
             contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
           }`}
         >

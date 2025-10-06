@@ -82,7 +82,7 @@ export function Hero({ slides, currentSlide, setCurrentSlide }: HeroProps) {
             {slides.map((slide, index) => (
               <h1
                 key={index}
-                className={`text-6xl md:text-8xl font-bold transition-all duration-1000 ${
+                className={`text-5xl md:text-7xl font-bold transition-all duration-1000 ${
                   index === currentSlide
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-8 absolute'
@@ -97,7 +97,7 @@ export function Hero({ slides, currentSlide, setCurrentSlide }: HeroProps) {
             {slides.map((slide, index) => (
               <p
                 key={index}
-                className={`text-xl md:text-2xl text-gray-300 transition-all duration-1000 ${
+                className={`text-lg md:text-xl text-gray-300 transition-all duration-1000 ${
                   index === currentSlide
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-8 absolute'
@@ -108,23 +108,23 @@ export function Hero({ slides, currentSlide, setCurrentSlide }: HeroProps) {
             ))}
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8 mt-12">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8 mt-12">
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full">
               <Zap className="w-5 h-5 text-orange-500" />
-              <span className="text-sm font-medium">Lightning Fast</span>
+              <span className="text-xs md:text-sm font-medium">Lightning Fast</span>
             </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full">
               <Shield className="w-5 h-5 text-orange-500" />
-              <span className="text-sm font-medium">100% Secure</span>
+              <span className="text-xs md:text-sm font-medium">100% Secure</span>
             </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full">
               <Sparkles className="w-5 h-5 text-orange-500" />
-              <span className="text-sm font-medium">Premium Experience</span>
+              <span className="text-xs md:text-sm font-medium">Premium Experience</span>
             </div>
           </div>
 
           <div className="mt-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
+            <h2 className="text-2xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
               Join the Waitlist
             </h2>
             <form onSubmit={handleSubmit} className="max-w-md mx-auto">

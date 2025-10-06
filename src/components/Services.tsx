@@ -52,17 +52,17 @@ export function Services() {
             titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
             Our <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Services</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
             Comprehensive transportation solutions designed to meet all your mobility needs, from daily commutes to special occasions.
           </p>
         </div>
 
         <div 
           ref={servicesRef}
-          className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-800 ${
+          className={`grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 transition-all duration-800 ${
             servicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
           }`}
         >
