@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Truck } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,9 +40,6 @@ export function Navigation() {
             onClick={() => scrollToSection('hero')}
             className="flex items-center gap-2 group"
           >
-            <div className="p-2 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg transform group-hover:scale-110 transition-transform">
-              <Truck className="w-6 h-6 text-white" />
-            </div>
             <span className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
               Ryder
             </span>

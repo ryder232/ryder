@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { supabase } from '../lib/supabase';
-import { Mail, Phone, MapPin, Send, Truck } from 'lucide-react';
+import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export function ContactUs() {
@@ -82,7 +82,7 @@ export function ContactUs() {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">Email Us</h4>
-                  <p className="text-gray-400">support@ryder.com</p>
+                  <p className="text-gray-400">getryder.official@gmail.com</p>
                 </div>
               </div>
 
@@ -198,9 +198,6 @@ export function ContactUs() {
         <footer className="mt-24 pt-12 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-2">
-              <div className="p-2 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg">
-                <Truck className="w-6 h-6 text-white" />
-              </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
                 Ryder
               </span>
