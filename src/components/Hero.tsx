@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { supabase } from '../lib/supabase';
+import { base } from '../lib/airtable';
 import { ArrowRight, Zap, Shield, Sparkles } from 'lucide-react';
 
 interface Slide {
@@ -19,28 +19,38 @@ export function Hero({ slides, currentSlide, setCurrentSlide }: HeroProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState('');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setMessage('');
 
-    try {
-      const { error } = await supabase
-        .from('waitlist')
-        .insert([{ email }]);
+    const tableName = import.meta.env.VITE_AIRTABLE_TABLE_NAME;
+    if (!tableName) {
+      setMessage('Airtable Table Name is not configured.');
+      setIsSubmitting(false);
+      return;
+    }
 
-      if (error) {
-        if (error.code === '23505') {
-          setMessage('You\'re already on the waitlist!');
-        } else {
-          setMessage('Something went wrong. Please try again.');
-        }
+    try {
+      await base(tableName).create([
+        {
+          fields: {
+            'Email Address': email,
+          },
+        },
+      ]);
+
+      setMessage('Welcome! You\'re on the list.');
+      setEmail('');
+    } catch (err: any) {
+      // A simple check for duplicate emails. 
+      // For a robust solution, you might need a more specific error handling strategy.
+      if (err && err.message && err.message.includes('DUPLICATE_VALUE')) {
+        setMessage('You\'re already on the waitlist!');
       } else {
-        setMessage('Welcome! You\'re on the list.');
-        setEmail('');
+        setMessage('Something went wrong. Please try again.');
+        console.error(err);
       }
-    } catch (err) {
-      setMessage('Something went wrong. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
