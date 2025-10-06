@@ -91,7 +91,7 @@ export function Navigation() {
         </div>
 
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 py-4 border-t border-white/10 space-y-4 animate-fade-in">
+          <div className="md:hidden mt-4 py-4 border-t border-white/10 space-y-4 animate-fade-in bg-black/95 backdrop-blur-lg">
             <button
               onClick={() => scrollToSection('about')}
               className="block w-full text-left text-white hover:text-orange-500 transition-colors font-medium py-2"
